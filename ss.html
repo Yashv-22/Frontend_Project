@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .popup-content {
+      text-align: center;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+      margin-top: 10px;
+      text-decoration: underline;
+    }
+
+    .book-now-btn {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .book-now-btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+  <title>Popup Menu</title>
+</head>
+<body>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>Book Now</h2>
+      <p>Click the button below to book your spot!</p>
+      <button class="book-now-btn">Book Now</button>
+      <span class="close-btn" onclick="closePopup()">Close</span>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+  <button onclick="openPopup()">Open Popup Menu</button>
+
+  <script>
+    function openPopup() {
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
